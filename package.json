@@ -1,0 +1,39 @@
+{
+  "name": "gulp-print",
+  "version": "1.0.0",
+  "description": "gulp plugin that prints names of files.",
+  "keywords": [],
+  "homepage": "https://github.com/alexgorbatchev/gulp-print",
+  "bugs": "https://github.com/alexgorbatchev/gulp-print/issues",
+  "author": {
+    "name": "Alex Gorbatchev",
+    "email": "",
+    "url": "https://github.com/alexgorbatchev"
+  },
+  "main": "./lib/gulp-print.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/alexgorbatchev/gulp-print.git"
+  },
+  "scripts": {
+    "test": "./node_modules/.bin/mocha test/*.spec.coffee",
+    "pretest": "./node_modules/.bin/coffee --bare --output ./lib --compile ./src/*.coffee"
+  },
+  "dependencies": {
+    "map-stream": "~0.1.0",
+    "gulp-util": "~2.x"
+  },
+  "devDependencies": {
+    "coffee-script": "~1.7.1",
+    "coffee-errors": "~0.8.5",
+    "sinon": "~1.8.1",
+    "sinon-chai": "~2.5.0",
+    "mocha": "~1.17.1",
+    "chai": "~1.9.0"
+  },
+  "engines": {
+    "node": ">=0.10.0",
+    "npm": ">=1.2.10"
+  },
+  "license": "MIT"
+}
