@@ -33,7 +33,7 @@ describe 'gulp-print', ->
     filepath = path.join process.cwd(), 'foo/bar.js'
 
     stream.on 'end', ->
-      expect(gutil.log).to.have.been.calledWith gutil.colors.magenta "Hello #{path.relative process.cwd(), filepath}"
+      expect(gutil.log).to.have.been.calledWith "Hello #{gutil.colors.magenta path.relative process.cwd(), filepath}"
       done()
 
     stream.write new gutil.File path: filepath

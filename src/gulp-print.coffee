@@ -6,5 +6,5 @@ module.exports = (format) ->
   format ?= (filepath) -> filepath
 
   map (file, cb) ->
-    gutil.log gutil.colors.magenta format path.relative process.cwd(), file.path
+    gutil.log format gutil.colors.magenta path.relative process.cwd(), file.path
     cb null, file
