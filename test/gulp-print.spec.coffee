@@ -11,14 +11,30 @@ expect = chai.expect
 chai.use require 'sinon-chai'
 
 describe 'gulp-print', ->
-  it 'logs file paths', (done) ->
-    stream = print()
-
+  beforeEach ->
     sinon.stub gutil, 'log'
 
+  afterEach ->
+    sinon.restore gutil, 'log'
+
+  it 'logs file path using default formatter', (done) ->
+    stream = print()
+    filepath = path.join process.cwd(), 'foo/bar.js'
+
     stream.on 'end', ->
-      expect(gutil.log).to.have.been.calledOnce
+      expect(gutil.log).to.have.been.calledWith gutil.colors.magenta path.relative process.cwd(), filepath
       done()
 
-    stream.write new gutil.File path: path.join process.cwd(), 'foo/bar.js'
+    stream.write new gutil.File path: filepath
+    stream.end()
+
+  it 'logs file paths using custom formatter', (done) ->
+    stream = print (filepath) -> "Hello #{filepath}"
+    filepath = path.join process.cwd(), 'foo/bar.js'
+
+    stream.on 'end', ->
+      expect(gutil.log).to.have.been.calledWith gutil.colors.magenta "Hello #{path.relative process.cwd(), filepath}"
+      done()
+
+    stream.write new gutil.File path: filepath
     stream.end()
