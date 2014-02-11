@@ -23,12 +23,26 @@ The absolute best thing to do is to sign up with [Gittip](http://gittip.com) if 
 
 ## Usage Example
 
+Using default formatter:
+
     var gulp = require('gulp');
     var print = require('gulp-print');
 
     gulp.task('print', function() {
       gulp.src('test/*.js')
         .pipe(print())
+    });
+
+Or using custom formatter:
+
+    var gulp = require('gulp');
+    var print = require('gulp-print');
+
+    gulp.task('print', function() {
+      gulp.src('test/*.js')
+        .pipe(print(function(filepath) {
+          return "built: " + filepath;
+        }))
     });
 
 ## Testing
