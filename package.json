@@ -1,8 +1,12 @@
 {
   "name": "gulp-print",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "gulp plugin that prints names of files.",
-  "keywords": ["gulp", "log", "print"],
+  "keywords": [
+    "gulp",
+    "log",
+    "print"
+  ],
   "homepage": "https://github.com/alexgorbatchev/gulp-print",
   "bugs": "https://github.com/alexgorbatchev/gulp-print/issues",
   "author": {
