@@ -1,9 +1,9 @@
 {
   "name": "gulp-print",
   "version": "1.0.2",
-  "description": "gulp plugin that prints names of files.",
+  "description": "Prints names of files to the console so that you can see what's in the pipe.",
   "keywords": [
-    "gulp",
+    "gulpplugin",
     "log",
     "print"
   ],
@@ -25,15 +25,16 @@
   },
   "dependencies": {
     "map-stream": "~0.1.0",
-    "gulp-util": "~2.x"
+    "colors": "~0.x"
   },
   "devDependencies": {
     "coffee-script": "~1.7.1",
     "coffee-errors": "~0.8.5",
-    "sinon": "~1.8.1",
-    "sinon-chai": "~2.5.0",
+    "sinon": "~1.x",
+    "sinon-chai": "~2.x",
     "mocha": "~1.17.1",
-    "chai": "~1.9.0"
+    "gulp-util": "~2.x",
+    "chai": "~1.x"
   },
   "engines": {
     "node": ">=0.10.0",

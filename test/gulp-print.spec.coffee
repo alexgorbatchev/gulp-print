@@ -3,7 +3,8 @@ require 'coffee-errors'
 path = require 'path'
 chai = require 'chai'
 sinon = require 'sinon'
-gutil  = require 'gulp-util'
+gutil = require 'gulp-util'
+colors = require 'colors'
 # using compiled JavaScript file here to be sure module works
 print = require '../lib/gulp-print.js'
 
@@ -12,17 +13,17 @@ chai.use require 'sinon-chai'
 
 describe 'gulp-print', ->
   beforeEach ->
-    sinon.stub gutil, 'log'
+    sinon.stub print, 'log'
 
   afterEach ->
-    sinon.restore gutil, 'log'
+    print.log.restore()
 
   it 'logs file path using default formatter', (done) ->
     stream = print()
     filepath = path.join process.cwd(), 'foo/bar.js'
 
     stream.on 'end', ->
-      expect(gutil.log).to.have.been.calledWith gutil.colors.magenta path.relative process.cwd(), filepath
+      expect(print.log).to.have.been.calledWith colors.magenta path.relative process.cwd(), filepath
       done()
 
     stream.write new gutil.File path: filepath
@@ -33,7 +34,7 @@ describe 'gulp-print', ->
     filepath = path.join process.cwd(), 'foo/bar.js'
 
     stream.on 'end', ->
-      expect(gutil.log).to.have.been.calledWith "Hello #{gutil.colors.magenta path.relative process.cwd(), filepath}"
+      expect(print.log).to.have.been.calledWith "Hello #{colors.magenta path.relative process.cwd(), filepath}"
       done()
 
     stream.write new gutil.File path: filepath
