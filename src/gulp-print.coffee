@@ -13,7 +13,9 @@ print = (format) ->
   format ?= (filepath) -> filepath
 
   map (file, cb) ->
-    print.log format colors.magenta path.relative process.cwd(), file.path
+    filepath = path.relative process.cwd(), file.path
+    formatted = format colors.magenta(filepath), filepath
+    print.log formatted if formatted
     cb null, file
 
 print.log = log
