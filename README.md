@@ -23,10 +23,10 @@ The absolute best thing to do is to sign up with [Gittip](http://gittip.com) if 
 
 ## Usage Example
 
-Using default formatter:
-
     var gulp = require('gulp');
     var print = require('gulp-print');
+
+Using default formatter:
 
     gulp.task('print', function() {
       gulp.src('test/*.js')
@@ -35,15 +35,26 @@ Using default formatter:
 
 Or using custom formatter:
 
-    var gulp = require('gulp');
-    var print = require('gulp-print');
-
     gulp.task('print', function() {
       gulp.src('test/*.js')
         .pipe(print(function(filepath) {
           return "built: " + filepath;
         }))
     });
+
+If you want to turn colors off:
+
+    gulp.task('print', function() {
+      gulp.src('test/*.js')
+        .pipe(print({colors: false}));
+    });
+
+## API
+
+### print(format or {format, colors})
+
+* `format` is a callback format function that passes in filepath to be printed. Callback should return a string which will be printed.
+* `colors` is a boolean which defaults to `true`.
 
 ## Testing
 
