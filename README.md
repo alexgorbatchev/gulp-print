@@ -2,11 +2,13 @@
 
 This is a very basic [gulp](http://gulpjs.com) plugin that prints names of files.
 
-[![Dependency status](https://david-dm.org/alexgorbatchev/gulp-print.png)](https://david-dm.org/alexgorbatchev/gulp-print)
-[![devDependency Status](https://david-dm.org/alexgorbatchev/gulp-print/dev-status.png)](https://david-dm.org/alexgorbatchev/gulp-print#info=devDependencies)
-[![Build Status](https://secure.travis-ci.org/alexgorbatchev/gulp-print.png?branch=master)](https://travis-ci.org/alexgorbatchev/gulp-print)
 
-[![NPM](https://nodei.co/npm/gulp-print.png?downloads=true)](https://npmjs.org/package/gulp-print)
+[![GitTip](http://img.shields.io/gittip/alexgorbatchev.svg)](https://gittip.com/alexgorbatchev)
+[![Dependency status](https://david-dm.org/alexgorbatchev/gulp-print.svg)](https://david-dm.org/alexgorbatchev/gulp-print)
+[![devDependency Status](https://david-dm.org/alexgorbatchev/gulp-print/dev-status.svg)](https://david-dm.org/alexgorbatchev/gulp-print#info=devDependencies)
+[![Build Status](https://secure.travis-ci.org/alexgorbatchev/gulp-print.svg?branch=master)](https://travis-ci.org/alexgorbatchev/gulp-print)
+
+[![NPM](https://nodei.co/npm/gulp-print.svg)](https://npmjs.org/package/gulp-print)
 
 ## Support
 
@@ -14,7 +16,7 @@ Please help me spend more time developing and maintaining awesome modules like t
 
 The absolute best thing to do is to sign up with [Gittip](http://gittip.com) if you haven't already and donate just $1 a week. That is roughly a cup of coffee per month. Also, please do donate to many other amazing open source projects!
 
-[![Gittip](http://img.shields.io/gittip/alexgorbatchev.png)](https://www.gittip.com/alexgorbatchev/)
+[![GitTip](http://img.shields.io/gittip/alexgorbatchev.svg)](https://gittip.com/alexgorbatchev)
 [![PayPayl donate button](http://img.shields.io/paypal/donate.png?color=yellow)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=PSDPM9268P8RW "Donate once-off to this project using Paypal")
 
 ## Installation
