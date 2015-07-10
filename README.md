@@ -21,35 +21,45 @@ The absolute best thing to do is to sign up with [Gittip](http://gittip.com) if 
 
 ## Installation
 
-    npm install gulp-print
+```sh
+npm install gulp-print
+```
 
 ## Usage Example
 
-    var gulp = require('gulp');
-    var print = require('gulp-print');
+```js
+var gulp = require('gulp');
+var print = require('gulp-print');
+```
 
 Using default formatter:
 
-    gulp.task('print', function() {
-      gulp.src('test/*.js')
-        .pipe(print())
-    });
+```js
+gulp.task('print', function() {
+  gulp.src('test/*.js')
+    .pipe(print())
+});
+```
 
 Or using custom formatter:
 
-    gulp.task('print', function() {
-      gulp.src('test/*.js')
-        .pipe(print(function(filepath) {
-          return "built: " + filepath;
-        }))
-    });
+```js
+gulp.task('print', function() {
+  gulp.src('test/*.js')
+    .pipe(print(function(filepath) {
+      return "built: " + filepath;
+    }))
+});
+```
 
 If you want to turn colors off:
 
-    gulp.task('print', function() {
-      gulp.src('test/*.js')
-        .pipe(print({colors: false}));
-    });
+```js
+gulp.task('print', function() {
+  gulp.src('test/*.js')
+    .pipe(print({colors: false}));
+});
+```
 
 ## API
 
@@ -60,7 +70,9 @@ If you want to turn colors off:
 
 ## Testing
 
-    npm test
+```sh
+npm test
+```
 
 ## License
 
