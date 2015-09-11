@@ -1,23 +1,12 @@
 # gulp-print
 
-This is a very basic [gulp](http://gulpjs.com) plugin that prints names of files.
-
-
+[![NPM downloads](https://img.shields.io/npm/dt/gulp-print.svg)](https://npmjs.org/package/gulp-print)
 [![GitTip](http://img.shields.io/gittip/alexgorbatchev.svg)](https://gittip.com/alexgorbatchev)
-[![Dependency status](https://david-dm.org/alexgorbatchev/gulp-print.svg)](https://david-dm.org/alexgorbatchev/gulp-print)
-[![devDependency Status](https://david-dm.org/alexgorbatchev/gulp-print/dev-status.svg)](https://david-dm.org/alexgorbatchev/gulp-print#info=devDependencies)
-[![Build Status](https://secure.travis-ci.org/alexgorbatchev/gulp-print.svg?branch=master)](https://travis-ci.org/alexgorbatchev/gulp-print)
+[![Dependency status](https://img.shields.io/david/alexgorbatchev/gulp-print.svg)](https://david-dm.org/alexgorbatchev/gulp-print)
+[![devDependency Status](https://img.shields.io/david/dev/alexgorbatchev/gulp-print.svg)](https://david-dm.org/alexgorbatchev/gulp-print#info=devDependencies)
+[![Build Status](https://img.shields.io/travis/alexgorbatchev/gulp-print.svg)](https://travis-ci.org/alexgorbatchev/gulp-print)
 
-[![NPM](https://nodei.co/npm/gulp-print.svg)](https://npmjs.org/package/gulp-print)
-
-## Support
-
-Please help me spend more time developing and maintaining awesome modules like this by donating!
-
-The absolute best thing to do is to sign up with [Gittip](http://gittip.com) if you haven't already and donate just $1 a week. That is roughly a cup of coffee per month. Also, please do donate to many other amazing open source projects!
-
-[![GitTip](http://img.shields.io/gittip/alexgorbatchev.svg)](https://gittip.com/alexgorbatchev)
-[![PayPayl donate button](http://img.shields.io/paypal/donate.png?color=yellow)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=PSDPM9268P8RW "Donate once-off to this project using Paypal")
+This is a very basic [gulp](http://gulpjs.com) plugin that prints names of files. It's useful as a debugging tool to see which files are moving through the pipe or as a status printout.
 
 ## Installation
 
