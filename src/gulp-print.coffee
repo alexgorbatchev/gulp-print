@@ -2,12 +2,9 @@ map = require 'map-stream'
 {green, magenta} = require 'colors'
 path = require 'path'
 
-log = ->
-  color = arguments[0]
+log = (color, args...) ->
   sig = if color then "[#{green('gulp')}]" else "[gulp]"
-  args = Array.prototype.slice.call arguments, 1
   args.unshift sig
-
   console.log.apply console, args
 
 print = (options = {}) ->

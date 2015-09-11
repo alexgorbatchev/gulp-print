@@ -24,7 +24,7 @@ describe 'gulp-print', ->
       filepath = path.join process.cwd(), 'foo/bar.js'
 
       stream.on 'end', ->
-        expect(print.log).to.have.been.calledWith colors.magenta path.relative process.cwd(), filepath
+        expect(print.log).to.have.been.calledWith true, colors.magenta path.relative process.cwd(), filepath
         done()
 
       stream.write new gutil.File path: filepath
@@ -35,7 +35,7 @@ describe 'gulp-print', ->
       filepath = path.join process.cwd(), 'foo/bar.js'
 
       stream.on 'end', ->
-        expect(print.log).to.have.been.calledWith "Hello #{colors.magenta path.relative process.cwd(), filepath}"
+        expect(print.log).to.have.been.calledWith true, "Hello #{colors.magenta path.relative process.cwd(), filepath}"
         done()
 
       stream.write new gutil.File path: filepath
@@ -49,7 +49,7 @@ describe 'gulp-print', ->
         colors: no
 
       stream.on 'end', ->
-        expect(print.log).to.have.been.calledWith "Hello #{path.relative process.cwd(), filepath}"
+        expect(print.log).to.have.been.calledWith false, "Hello #{path.relative process.cwd(), filepath}"
         done()
 
       stream.write new gutil.File path: filepath
@@ -60,7 +60,7 @@ describe 'gulp-print', ->
       filepath = path.join process.cwd(), 'foo/bar.js'
 
       stream.on 'end', ->
-        expect(print.log).to.have.been.calledWith path.relative process.cwd(), filepath
+        expect(print.log).to.have.been.calledWith false, path.relative process.cwd(), filepath
         done()
 
       stream.write new gutil.File path: filepath
