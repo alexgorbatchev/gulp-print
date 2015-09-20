@@ -41,21 +41,11 @@ gulp.task('print', function() {
 });
 ```
 
-If you want to turn colors off:
-
-```js
-gulp.task('print', function() {
-  gulp.src('test/*.js')
-    .pipe(print({colors: false}));
-});
-```
-
 ## API
 
-### print(format or {format, colors})
+### print(formatter)
 
-* `format` is a callback format function that passes in filepath to be printed. Callback should return a string which will be printed.
-* `colors` is a boolean which defaults to `true`.
+* `formatter` is a callback format function that passes in filepath to be printed. Callback should return a string which will be printed.
 
 ## Testing
 
