@@ -31,10 +31,10 @@
   "devDependencies": {
     "coffee-script": "~1.12.2",
     "coffee-errors": "~0.8.6",
-    "sinon": "^1.16.1",
+    "sinon": "^4.0.1",
     "sinon-chai": "^2.8.0",
     "mocha": "^4.0.1",
-    "chai": "^3.2.0"
+    "chai": "^4.1.2"
   },
   "engines": {
     "node": ">=0.10.0",
