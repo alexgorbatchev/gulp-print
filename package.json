@@ -33,7 +33,7 @@
     "coffee-errors": "~0.8.6",
     "sinon": "^4.0.1",
     "sinon-chai": "^2.8.0",
-    "mocha": "^3.2.0",
+    "mocha": "^4.0.1",
     "chai": "^4.1.2"
   },
   "engines": {
