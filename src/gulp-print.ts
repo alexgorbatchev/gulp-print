@@ -1,25 +1,39 @@
-/*
- * decaffeinate suggestions:
- * DS102: Remove unnecessary code created because of implicit returns
- * DS207: Consider shorter variations of null checks
- * Full docs: https://github.com/decaffeinate/decaffeinate/blob/master/docs/suggestions.md
- */
-const map = require('map-stream');
-const path = require('path');
-const {log, colors} = require('gulp-util');
+import * as map from 'map-stream';
+import * as path from 'path';
+import * as log from 'fancy-log';
+import * as colors from 'ansi-colors';
 
-const {green, magenta} = colors;
+import stream = require('stream');
+import vinyl = require('vinyl');
 
-var print = function(format) {
-  if (format == null) { format = filepath => filepath; }
+interface IFormatFunction {
+  (filepath: String): String;
+}
 
-  return map(function(file, cb) {
-    const filepath = magenta(path.relative(process.cwd(), file.path));
+interface IGulpPrintFunction {
+  (format: IFormatFunction): stream.Stream;
+  log: Function;
+}
+
+function gulpPrint(format: IFormatFunction): stream.Stream {
+  if (format == null) {
+    format = (filepath: String): String => filepath;
+  }
+
+  return map((file: vinyl, cb: map.INewDataCallback): void => {
+    const filepath = colors.magenta(path.relative(process.cwd(), file.path));
     const formatted = format(filepath);
-    if (formatted) { print.log(formatted); }
-    return cb(null, file);
+
+    if (formatted) {
+      exportFunction.log(formatted);
+    }
+
+    cb(null, file);
   });
 };
 
-print.log = log;
-module.exports = print;
+const exportFunction: IGulpPrintFunction = <IGulpPrintFunction>gulpPrint;
+
+exportFunction.log = log;
+
+module.exports = exportFunction;
