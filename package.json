@@ -33,9 +33,9 @@
     "chai": "^4.1.2",
     "coffee-errors": "~0.8.6",
     "coffee-script": "~1.12.2",
-    "mocha": "^4.0.1",
     "sinon": "^4.0.1",
     "sinon-chai": "^2.8.0",
+    "mocha": "^5.0.0",
     "vinyl": "^2.1.0"
   },
   "engines": {
