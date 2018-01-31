@@ -2,15 +2,14 @@ import * as map from 'map-stream';
 import * as path from 'path';
 import * as log from 'fancy-log';
 import * as colors from 'ansi-colors';
+import * as stream from 'stream';
+import * as vinyl from 'vinyl';
 
-import stream = require('stream');
-import vinyl = require('vinyl');
-
-interface IFormatFunction {
+export interface IFormatFunction {
   (filepath: String): String;
 }
 
-interface IGulpPrintFunction {
+export interface IGulpPrintFunction {
   (format: IFormatFunction): stream.Stream;
   log: Function;
 }
@@ -36,4 +35,4 @@ const exportFunction: IGulpPrintFunction = <IGulpPrintFunction>gulpPrint;
 
 exportFunction.log = log;
 
-module.exports = exportFunction;
+export default exportFunction;
