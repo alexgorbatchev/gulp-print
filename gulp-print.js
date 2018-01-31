@@ -4,21 +4,23 @@ const map = require("map-stream");
 const path = require("path");
 const log = require("fancy-log");
 const colors = require("ansi-colors");
-function gulpPrint(format) {
-    if (format == null) {
-        format = (filepath) => filepath;
-    }
-    function mapFile(file, cb) {
-        const filepath = colors.magenta(path.relative(process.cwd(), file.path));
-        const formatted = format(filepath);
-        if (formatted) {
-            exportFunction.log(formatted);
+const result = (() => {
+    const gulpPrint = function (format) {
+        if (format == null) {
+            format = (filepath) => filepath;
         }
-        cb(null, file);
-    }
-    return map(mapFile);
-}
-const exportFunction = gulpPrint;
-exportFunction.log = log;
-exports.default = exportFunction;
+        function mapFile(file, cb) {
+            const filepath = colors.magenta(path.relative(process.cwd(), file.path));
+            const formatted = format(filepath);
+            if (formatted) {
+                gulpPrint.log(formatted);
+            }
+            cb(null, file);
+        }
+        return map(mapFile);
+    };
+    gulpPrint.log = log;
+    return gulpPrint;
+})();
+exports.default = result;
 //# sourceMappingURL=gulp-print.js.map
