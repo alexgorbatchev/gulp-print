@@ -14,9 +14,11 @@ chai.use require 'sinon-chai'
 describe 'gulp-print', ->
   beforeEach ->
     sinon.stub print, 'log'
+    return
 
   afterEach ->
     print.log.restore()
+    return
 
   describe 'passing formatting function', ->
     it 'logs file path using default formatter', (done) ->
@@ -26,9 +28,11 @@ describe 'gulp-print', ->
       stream.on 'end', ->
         expect(print.log).to.have.been.calledWith colors.magenta path.relative process.cwd(), filepath
         done()
+        return
 
       stream.write new Vinyl path: filepath
       stream.end()
+      return
 
     it 'logs file paths using custom formatter', (done) ->
       stream = print (filepath) -> "Hello #{filepath}"
@@ -37,7 +41,9 @@ describe 'gulp-print', ->
       stream.on 'end', ->
         expect(print.log).to.have.been.calledWith "Hello #{colors.magenta path.relative process.cwd(), filepath}"
         done()
+        return
 
       stream.write new Vinyl path: filepath
       stream.end()
+      return
 
