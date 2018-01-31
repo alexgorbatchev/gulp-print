@@ -1,0 +1,32 @@
+---
+parser: typescript-eslint-parser
+extends:
+- airbnb
+- prettier
+- typescript
+- typescript/prettier
+plugins:
+- typescript
+rules:
+  prettier/prettier: error
+  import/extensions: 0
+  import/no-extraneous-dependencies:
+  - error
+  - devDependencies:
+    - "**/__tests__/**"
+  require-jsdoc: 0
+  jsx-a11y/anchor-is-valid:
+  - off
+
+settings:
+  # import/ignore:
+  # ignore ts files for now
+  # https://github.com/benmosher/eslint-plugin-import/issues/842
+  # - \.tsx?
+  import/resolver:
+    node: true
+    eslint-import-resolver-typescript: true
+  import/parsers:
+    typescript-eslint-parser:
+    - ".ts"
+    - ".tsx"

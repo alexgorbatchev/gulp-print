@@ -5,36 +5,38 @@ import * as colors from 'ansi-colors';
 import * as stream from 'stream';
 import * as vinyl from 'vinyl';
 
-export interface IFormatFunction {
+export interface FormatFunction {
   (filepath: String): String;
 }
 
-export interface IGulpPrintFunction {
-  (format?: IFormatFunction): stream.Stream;
+export interface GulpPrintFunction {
+  (format?: FormatFunction): stream.Stream;
   log: Function;
 }
 
-function gulpPrint(format?: IFormatFunction): stream.Stream {
-  if (format == null) {
-    format = (filepath: String): String => filepath;
-  }
-
-  function mapFile(file: vinyl, cb: map.INewDataCallback): void {
-    const filepath = colors.magenta(path.relative(process.cwd(), file.path));
-    const formatted = format(filepath);
-
-    if (formatted) {
-      exportFunction.log(formatted);
+const result: GulpPrintFunction = (() => {
+  const gulpPrint: any = function(format?: FormatFunction): stream.Stream {
+    if (format == null) {
+      format = (filepath: String): String => filepath;
     }
 
-    cb(null, file);
-  }
+    function mapFile(file: vinyl, cb: map.INewDataCallback): void {
+      const filepath = colors.magenta(path.relative(process.cwd(), file.path));
+      const formatted = format(filepath);
 
-  return map(mapFile);
-}
+      if (formatted) {
+        gulpPrint.log(formatted);
+      }
 
-const exportFunction: IGulpPrintFunction = <IGulpPrintFunction>gulpPrint;
+      cb(null, file);
+    }
 
-exportFunction.log = log;
+    return map(mapFile);
+  };
 
-export default exportFunction;
+  gulpPrint.log = log;
+
+  return gulpPrint as GulpPrintFunction;
+})();
+
+export default result;
