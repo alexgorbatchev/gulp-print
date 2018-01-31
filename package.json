@@ -1,6 +1,6 @@
 {
   "name": "gulp-print",
-  "version": "2.0.1",
+  "version": "3.0.0",
   "description": "Prints names of files to the console so that you can see what's going through the the gulp pipe.",
   "keywords": [
     "gulpplugin",
