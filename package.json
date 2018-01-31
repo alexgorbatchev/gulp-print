@@ -21,21 +21,25 @@
     "url": "https://github.com/alexgorbatchev/gulp-print.git"
   },
   "scripts": {
-    "test": "mocha test/*.spec.coffee",
-    "pretest": "coffee --bare --output ./lib --compile ./src/*.coffee"
+    "test": "mocha test/*.spec.ts",
+    "pretest1": "coffee --bare --output ./lib --compile ./src/*.spec.ts"
   },
   "dependencies": {
     "@types/ansi-colors": "^1.0.0",
     "@types/fancy-log": "^1.3.0",
+    "@types/sinon": "^4.1.3",
     "@types/vinyl": "^2.0.2",
     "ansi-colors": "^1.0.1",
     "fancy-log": "^1.3.2",
     "map-stream": "~0.0.6"
   },
   "devDependencies": {
+    "@types/chai": "^4.1.2",
     "@types/gulp-util": "^3.0.31",
     "@types/mocha": "^2.2.40",
     "@types/node": "^8.0.34",
+    "@types/sinon-chai": "^2.7.29",
+    "chai": "^4.1.2",
     "eslint": "^4.7.2",
     "eslint-config-airbnb": "^16.0.0",
     "eslint-config-prettier": "^2.6.0",
@@ -47,17 +51,16 @@
     "eslint-plugin-jsx-a11y": "^6.0.2",
     "eslint-plugin-prettier": "^2.3.1",
     "eslint-plugin-react": "^7.3.0",
-    "eslint-plugin-typescript": "^0.8.0",
+    "eslint-plugin-typescript": "^0.8.1",
+    "mocha": "^5.0.0",
     "mocha-clean": "^1.0.0",
+    "prettier": "^1.7.0",
     "sinon": "^4.0.1",
     "sinon-chai": "^2.8.0",
-    "mocha": "^5.0.0",
-    "vinyl": "^2.1.0",
-    "chai": "^4.1.2",
-    "prettier": "^1.7.0",
     "ts-node": "^3.3.0",
     "typescript": "^2.5.3",
-    "typescript-eslint-parser": "^8.0.0"
+    "typescript-eslint-parser": "^8.0.0",
+    "vinyl": "^2.1.0"
   },
   "engines": {
     "node": ">=0.10.0",

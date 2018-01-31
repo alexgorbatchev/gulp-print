@@ -10,16 +10,16 @@ export interface IFormatFunction {
 }
 
 export interface IGulpPrintFunction {
-  (format: IFormatFunction): stream.Stream;
+  (format?: IFormatFunction): stream.Stream;
   log: Function;
 }
 
-function gulpPrint(format: IFormatFunction): stream.Stream {
+function gulpPrint(format?: IFormatFunction): stream.Stream {
   if (format == null) {
     format = (filepath: String): String => filepath;
   }
 
-  return map((file: vinyl, cb: map.INewDataCallback): void => {
+  function mapFile(file: vinyl, cb: map.INewDataCallback): void {
     const filepath = colors.magenta(path.relative(process.cwd(), file.path));
     const formatted = format(filepath);
 
@@ -28,8 +28,10 @@ function gulpPrint(format: IFormatFunction): stream.Stream {
     }
 
     cb(null, file);
-  });
-};
+  }
+
+  return map(mapFile);
+}
 
 const exportFunction: IGulpPrintFunction = <IGulpPrintFunction>gulpPrint;
 
