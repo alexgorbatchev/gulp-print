@@ -1,9 +1,19 @@
 {
   "name": "gulp-print",
-  "version": "3.0.0",
+  "version": "4.0.0",
   "description": "Prints names of files to the console so that you can see what's going through the the gulp pipe.",
-  "files": ["./gulp-print.d.ts", "./gulp-print.js", "./gulp-print.js.map"],
-  "keywords": ["gulpplugin", "log", "print", "debug", "status"],
+  "files": [
+    "./gulp-print.d.ts",
+    "./gulp-print.js",
+    "./gulp-print.js.map"
+  ],
+  "keywords": [
+    "gulpplugin",
+    "log",
+    "print",
+    "debug",
+    "status"
+  ],
   "homepage": "https://github.com/alexgorbatchev/gulp-print",
   "bugs": "https://github.com/alexgorbatchev/gulp-print/issues",
   "author": {
