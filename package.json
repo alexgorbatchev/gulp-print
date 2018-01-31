@@ -25,16 +25,18 @@
     "pretest": "coffee --bare --output ./lib --compile ./src/*.coffee"
   },
   "dependencies": {
-    "map-stream": "~0.0.6",
-    "gulp-util": "^3.0.6"
+    "ansi-colors": "^1.0.1",
+    "fancy-log": "^1.3.2",
+    "map-stream": "~0.0.6"
   },
   "devDependencies": {
-    "coffee-script": "~1.12.2",
+    "chai": "^4.1.2",
     "coffee-errors": "~0.8.6",
+    "coffee-script": "~1.12.2",
     "sinon": "^4.0.1",
     "sinon-chai": "^2.8.0",
     "mocha": "^5.0.0",
-    "chai": "^4.1.2"
+    "vinyl": "^2.1.0"
   },
   "engines": {
     "node": ">=0.10.0",
