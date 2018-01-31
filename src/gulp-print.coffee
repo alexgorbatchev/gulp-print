@@ -1,6 +1,7 @@
 map = require 'map-stream'
 path = require 'path'
-{log, colors} = require 'gulp-util'
+log = require 'fancy-log'
+colors = require 'ansi-colors'
 
 {green, magenta} = colors
 
