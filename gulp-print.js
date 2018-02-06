@@ -23,4 +23,5 @@ const result = (() => {
     return gulpPrint;
 })();
 exports.default = result;
+module.exports = result;
 //# sourceMappingURL=gulp-print.js.map

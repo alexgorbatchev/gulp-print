@@ -40,3 +40,4 @@ const result: GulpPrintFunction = (() => {
 })();
 
 export default result;
+module.exports = result;
