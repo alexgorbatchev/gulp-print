@@ -36,6 +36,11 @@ gulp.task('print', () => {
   gulp.src('test/*.js')
     .pipe(print(filepath => `built: ${filepath}`))
 });
+
+// ... change log function
+import { setLogFunction } from 'gulp-print';
+
+setLogFunction(message => console.log('LOG', message));
 ```
 
 ## API

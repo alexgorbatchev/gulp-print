@@ -31,7 +31,7 @@
     "test": "npm run mocha && npm run tsc && node ./gulp-print.js",
     "eslint": "eslint src/*.ts __tests__/*.ts",
     "tsc": "tsc -p src/tsconfig.json",
-    "prepublish": "npm run eslint && npm test && npm run tsc"
+    "prepublish": "npm run eslint && npm test"
   },
   "dependencies": {
     "ansi-colors": "^1.0.1",
