@@ -1,6 +1,6 @@
 {
   "name": "gulp-print",
-  "version": "4.0.1",
+  "version": "4.0.2",
   "description": "Prints names of files to the console so that you can see what's going through the the gulp pipe.",
   "files": [
     "./gulp-print.d.ts",
