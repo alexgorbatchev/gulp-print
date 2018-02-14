@@ -1,15 +1,13 @@
-'use strict';
-
-var mapNs = require('map-stream');
-var mapNs__default = mapNs['default'];
-var path = require('path');
-var fancyLog = require('fancy-log');
-var colors = require('ansi-colors');
-
-let map = mapNs__default || mapNs;
+import * as mapNs from 'map-stream';
+let map = mapNs.default || mapNs;
+import * as path from 'path';
+import * as fancyLog from 'fancy-log';
+import * as colors from 'ansi-colors';
 let log = fancyLog;
-
-function gulpPrint(format) {
+export function setLogFunction(fn) {
+    log = fn;
+}
+export default function gulpPrint(format) {
     if (!format) {
         format = (filepath) => filepath;
     }
@@ -23,6 +21,4 @@ function gulpPrint(format) {
     }
     return map(mapFile);
 }
-
-module.exports = gulpPrint;
-//# sourceMappingURL=gulp-print.js.map
+//# sourceMappingURL=plugin.js.map
