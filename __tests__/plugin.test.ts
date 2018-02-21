@@ -7,7 +7,7 @@ import * as sinon from 'sinon';
 import * as Vinyl from 'vinyl';
 
 import { Writable } from 'stream';
-import print, { setLogFunction } from '../src/gulp-print';
+import print, { setLogFunction } from '../src/plugin';
 
 chai.use(require('sinon-chai'));
 
