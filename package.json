@@ -34,7 +34,7 @@
     "prepublish": "npm run eslint && npm test"
   },
   "dependencies": {
-    "ansi-colors": "^1.0.1",
+    "ansi-colors": "^2.0.1",
     "fancy-log": "^1.3.2",
     "map-stream": "0.0.7",
     "vinyl": "^2.1.0"
@@ -45,7 +45,7 @@
     "@types/fancy-log": "^1.3.0",
     "@types/gulp-util": "^3.0.31",
     "@types/mocha": "^2.2.48",
-    "@types/node": "^9.4.0",
+    "@types/node": "^10.0.3",
     "@types/sinon": "^4.1.3",
     "@types/sinon-chai": "^2.7.29",
     "@types/vinyl": "^2.0.2",
@@ -56,20 +56,20 @@
     "eslint-config-typescript": "^1.0.2",
     "eslint-formatter-pretty": "^1.3.0",
     "eslint-import-resolver-typescript": "^1.0.0",
-    "eslint-loader": "^1.9.0",
+    "eslint-loader": "^2.0.0",
     "eslint-plugin-import": "^2.7.0",
     "eslint-plugin-jsx-a11y": "^6.0.2",
     "eslint-plugin-prettier": "^2.3.1",
     "eslint-plugin-react": "^7.3.0",
-    "eslint-plugin-typescript": "^0.8.1",
+    "eslint-plugin-typescript": "^0.9.0",
     "mocha": "^5.0.0",
     "mocha-clean": "^1.0.0",
     "prettier": "^1.7.0",
-    "sinon": "^4.0.1",
+    "sinon": "^5.0.0",
     "sinon-chai": "^3.0.0",
-    "ts-node": "^5.0.0",
+    "ts-node": "^6.0.0",
     "typescript": "^2.5.3",
-    "typescript-eslint-parser": "^14.0.0"
+    "typescript-eslint-parser": "^15.0.0"
   },
   "engines": {
     "node": ">=6"
