@@ -50,7 +50,7 @@
     "@types/sinon-chai": "^2.7.29",
     "@types/vinyl": "^2.0.2",
     "chai": "^4.1.2",
-    "eslint": "^4.7.2",
+    "eslint": "^5.0.0",
     "eslint-config-airbnb": "^16.0.0",
     "eslint-config-prettier": "^2.6.0",
     "eslint-config-typescript": "^1.0.2",
