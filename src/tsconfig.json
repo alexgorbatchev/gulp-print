@@ -1,7 +1,4 @@
 {
   "extends": "../tsconfig.json",
-  "include": [
-    "./gulp-print.ts",
-    "./map-stream.d.ts"
-  ]
+  "include": ["./gulp-print.ts", "./map-stream.d.ts"]
 }

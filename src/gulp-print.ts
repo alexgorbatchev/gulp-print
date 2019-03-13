@@ -6,11 +6,11 @@ import * as stream from 'stream';
 import * as vinyl from 'vinyl';
 
 export interface FormatFunction {
-  (filepath: String): String;
+  (filepath: string): string;
 }
 
 export interface LogFunction {
-  (message: String): void;
+  (message: string): void;
 }
 
 let log: LogFunction = fancyLog;
@@ -21,7 +21,7 @@ export function setLogFunction(fn: LogFunction): void {
 
 export default function gulpPrint(format?: FormatFunction): stream.Stream {
   if (!format) {
-    format = (filepath: String): String => filepath;
+    format = (filepath: string): string => filepath;
   }
 
   function mapFile(file: vinyl, cb: map.INewDataCallback): void {
