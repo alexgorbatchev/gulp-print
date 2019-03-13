@@ -1,22 +1,23 @@
 ---
 parser: typescript-eslint-parser
 extends:
-- airbnb
-- prettier
-- typescript
-- typescript/prettier
+  - airbnb
+  - prettier
+  - typescript
+  - typescript/prettier
 plugins:
-- typescript
+  - typescript
+  - mocha
 rules:
   prettier/prettier: error
   import/extensions: 0
   import/no-extraneous-dependencies:
-  - error
-  - devDependencies:
-    - "**/__tests__/**"
+    - error
+    - devDependencies:
+        - "**/__tests__/**"
   require-jsdoc: 0
   jsx-a11y/anchor-is-valid:
-  - off
+    - off
 
 settings:
   # import/ignore:
@@ -28,5 +29,5 @@ settings:
     eslint-import-resolver-typescript: true
   import/parsers:
     typescript-eslint-parser:
-    - ".ts"
-    - ".tsx"
+      - ".ts"
+      - ".tsx"
